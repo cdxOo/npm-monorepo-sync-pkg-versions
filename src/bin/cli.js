@@ -37,7 +37,7 @@ var cliOptions = [
         long: 'json-spaces',
         arg: 'n',
         description: 'output json indent spacing',
-        defaults: 4,
+        defaults: 2,
         parse: str => parseInt(str)
     }
 ]

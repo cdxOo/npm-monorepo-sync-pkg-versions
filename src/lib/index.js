@@ -31,7 +31,7 @@ var run = async (options) => {
         }
     }
     else {
-        console.log(JSON.stringify(store, undefined, 4));
+        console.log(JSON.stringify(store, undefined, 2));
     }
 }
 
