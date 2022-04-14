@@ -1,2 +1,2 @@
-# version-fixer
-fix mismatching dependecy versions in monorepos
+# npm-monorepo-sync-pkg-versions
+fix mismatching package dependency versions in monorepo
