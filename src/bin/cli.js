@@ -9,12 +9,35 @@ program
     .usage('some usage')
 
 var cliOptions = [
+    //{
+    //    long: 'foo',
+    //    short: 'f',
+    //    arg: 'int',
+    //    description: 'foo descr',
+    //    defaults: 42,
+    //    parse: str => parseInt(str)
+    //},
     {
-        long: 'foo',
-        short: 'f',
-        arg: 'int',
-        description: 'foo descr',
-        defaults: 42,
+        long: 'only',
+        arg: 'packages...',
+        description: 'only include the given packages',
+        parse: (it, acc) => ([ ...acc, it ]),
+        defaults: []
+    },
+    {
+        long: 'fix',
+        description: 'fix version inconsistencies using the latest local version',
+    },
+    {
+        long: 'prefix',
+        arg: ['patch', 'minor', 'above'],
+        description: 'enforce semver prefix; patch = "~", minor="^", above=">="'
+    },
+    {
+        long: 'json-spaces',
+        arg: 'n',
+        description: 'output json indent spacing',
+        defaults: 4,
         parse: str => parseInt(str)
     }
 ]
@@ -35,8 +58,9 @@ for (var it of cliOptions) {
     long = `--${long}`;
     arg = arg ? ` <${arg}>` : '';
 
+    var def = `${short}${long}${arg}`;
     program.option(
-        `${short}${long}${arg}`,
+        def,
         description,
         parse,
         defaults
@@ -45,6 +69,6 @@ for (var it of cliOptions) {
 
 program.parse(process.argv);
 fixer({
-    ...program.opts,
+    ...program.opts(),
     cli: true
 });

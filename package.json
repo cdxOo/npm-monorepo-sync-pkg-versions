@@ -24,9 +24,8 @@
   "homepage": "https://github.com/cdxOo/version-fixer#readme",
   "dependencies": {
     "commander": "^9.1.0",
-    "globby": "^10.0.1",
+    "globby": "^11.1.0",
     "json-parse-helpfulerror": "^1.0.3",
-    "semver": "^7.3.7",
     "semver-utils": "^1.1.4"
   }
 }
