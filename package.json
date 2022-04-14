@@ -1,27 +1,23 @@
 {
-  "name": "@cdxoo/version-fixer",
+  "name": "@cdxoo/npm-monorepo-sync-pkg-versions",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/cjs/index.js",
-  "scripts": {
-    "test": "make test",
-    "clean": "make clean",
-    "dev": "make dev",
-    "build": "make build"
+  "bin": {
+      "npm-monorepo-sync-pkg-versions": "src/bin/cli.js"
   },
   "files": [
-    "dist"
+    "src"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cdxOo/version-fixer.git"
+    "url": "git+https://github.com/cdxOo/npm-monorepo-sync-pkg-versions.git"
   },
   "author": "Jan Schwalbe",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cdxOo/version-fixer/issues"
+    "url": "https://github.com/cdxOo/npm-monorepo-sync-pkg-versions/issues"
   },
-  "homepage": "https://github.com/cdxOo/version-fixer#readme",
+  "homepage": "https://github.com/cdxOo/npm-monorepo-sync-pkg-versions#readme",
   "dependencies": {
     "commander": "^9.1.0",
     "globby": "^11.1.0",
