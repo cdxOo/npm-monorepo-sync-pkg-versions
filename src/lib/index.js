@@ -140,7 +140,7 @@ var extract = (bag) => {
     var { store, path, deps, only } = bag;
 
     var names = Object.keys(deps).filter(it => (
-        !only || only && only.includes(it)
+        !only.length || only.includes(it)
     ));
 
     for (var name of names) {
