@@ -32,7 +32,7 @@ var cliOptions = [
     },
     {
         long: 'prefix',
-        arg: ['patch', 'minor', 'above'],
+        arg: ['exact', 'patch', 'minor', 'above'],
         description: 'enforce semver prefix; patch = "~", minor="^", above=">="'
     },
     {

@@ -74,11 +74,15 @@ var fixVersions = async (bag) => {
     // FIXME: this is slow but i dont care right now
     for (var it of todo) {
         var { name, versions, paths } = it;
-        var latest = versions.sort().pop();
+        var latest = (
+            versions
+            .map(it => (
+                it.replace(/^[^0-9]*/, getRealPrefix(prefix))
+            ))
+            .sort()
+            .pop()
+        );
 
-        if (prefix) {
-            latest = latest.replace(/^[^0-9]*/, getRealPrefix(prefix));
-        }
         console.log(name, latest);
 
         for (var path of paths) {
@@ -106,6 +110,7 @@ var fixVersions = async (bag) => {
 }
 
 var getRealPrefix = (label) => ({
+    'exact': '',
     'patch': '~',
     'minor': '^',
     'above': '>='
