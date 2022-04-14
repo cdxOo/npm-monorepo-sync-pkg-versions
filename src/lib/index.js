@@ -31,7 +31,12 @@ var run = async (options) => {
         }
     }
     else {
-        console.log(JSON.stringify(store, undefined, 2));
+        if (Object.keys(store).length > 0) {
+            console.log(JSON.stringify(store, undefined, 2));
+        }
+        else {
+            console.log(`no version inconsistencies found in ${paths.length} package.json files`)
+        }
     }
 }
 
