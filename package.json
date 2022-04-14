@@ -1,6 +1,6 @@
 {
   "name": "@cdxoo/npm-monorepo-sync-pkg-versions",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "bin": {
       "npm-monorepo-sync-pkg-versions": "src/bin/cli.js"
